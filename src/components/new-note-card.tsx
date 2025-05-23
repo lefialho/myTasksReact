@@ -137,7 +137,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
             <div className="flex flex-1 flex-col gap-3 p-5">
               {shouldShowOnboarding ? (
-                <Dialog.Description className="text-sm leading-6 text-slate-400 dark:text-slate-400 overflow-hidden">
+                <Dialog.Description className="leading-relaxed text-lg text-slate-400 dark:text-slate-400 overflow-hidden">
                   Comece{' '}
                   <button
                     type="button"
