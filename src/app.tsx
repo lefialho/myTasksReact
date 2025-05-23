@@ -98,9 +98,7 @@ export function App() {
         </form>
       ) : (
         <p className="text-slate-400 text-xl">
-          Pressione no botão
-          <PlusCircle className="inline-block mx-2 text-slate-500 size-7 stroke-1 bg-slate-300 rounded-full p-[2px]" />
-          abaixo, para inserir uma nota.
+          Pressione no botão + logo abaixo, para inserir uma nota.
         </p>
       )}
 
