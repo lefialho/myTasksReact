@@ -3,7 +3,6 @@ import { NewNoteCard } from './components/new-note-card';
 import { NoteCard } from './components/note-card';
 import { ThemeToggle } from './components/toggle';
 import { Logo } from './components/logo';
-import { PlusCircle } from 'lucide-react';
 
 interface Note {
   id: string;
