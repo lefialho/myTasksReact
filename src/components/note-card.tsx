@@ -68,7 +68,7 @@ export function NoteCard({
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-        <Dialog.Content className="overflow-hidden fixed inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] md:h-[60vh] w-full bg-white dark:bg-slate-700 md:rounded-md flex flex-col outline-none">
+        <Dialog.Content className="overflow-hidden fixed inset-0 z-20 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] md:h-[60vh] w-full bg-white dark:bg-slate-700 md:rounded-md flex flex-col outline-none">
           <Dialog.Close className="absolute right-0 top-0 p-1.5 bg-slate-200 hover dark:bg-slate-800 text-slate-400 hover:text-slate-500 dark:hover:text-slate-100 outline-none focus-visible:ring-2 focus-visible:ring-lime-400 rounded-bl-sm">
             <X className="size-5" />
           </Dialog.Close>
@@ -116,11 +116,10 @@ export function NoteCard({
               type="button"
               className="w-full py-4 text-center text-sm text-slate-300 bg-slate-700 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-900 focus-visible:bg-slate-800 dark:focus-visible:bg-slate-900 font-medium group outline-none"
             >
-              Deseja{' '}
               <span className="text-red-400 group-hover:underline underline-offset-2">
-                apagar essa nota
+                Apagar
               </span>{' '}
-              ?
+              nota
             </button>
           </div>
         </Dialog.Content>

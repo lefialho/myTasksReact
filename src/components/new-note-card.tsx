@@ -105,7 +105,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="fixed z-10 bottom-2 right-2 md:bottom-8 md:right-8 p-0.5 outline-none focus-visible:bg-lime-400 bg-slate-300 hover:bg-lime-400 text-slate-500 rounded-full">
+      <Dialog.Trigger className="fixed z-10 bottom-4 right-4 md:bottom-8 md:right-8 p-0.5 outline-none focus-visible:bg-lime-400 bg-lime-400 hover:bg-lime-500 text-slate-500 rounded-full">
         <PlusCircle className="size-10 stroke-1" />
       </Dialog.Trigger>
 

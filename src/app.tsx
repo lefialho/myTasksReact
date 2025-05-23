@@ -78,7 +78,7 @@ export function App() {
       : notes;
 
   return (
-    <div className="mx-auto max-w-6xl my-12 space-y-6 px-5">
+    <div className="mx-auto max-w-6xl my-6 md:my-12 space-y-6 px-5">
       <div className="flex items-center justify-between gap-2 text-slate-500 dark:text-slate-300 font-bold">
         <span className="inline-flex items-center gap-1">
           <Logo /> MyNotes
@@ -97,9 +97,9 @@ export function App() {
           />
         </form>
       ) : (
-        <p className="flex items-center gap-2 text-slate-500 dark:text-slate-300">
+        <p className="text-slate-400 text-xl md:text-2xl">
           Pressione no botão
-          <PlusCircle className="text-slate-500 size-7 stroke-1 bg-slate-300 rounded-full p-[2px]" />{' '}
+          <PlusCircle className="inline-block mx-2 text-slate-500 size-7 stroke-1 bg-slate-300 rounded-full p-[2px]" />
           abaixo, para inserir uma nota.
         </p>
       )}
