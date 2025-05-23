@@ -66,7 +66,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     speechRecognition.lang = 'pt-BR';
     speechRecognition.continuous = true; // Permite reconhecimento de fala contínuo, até pedir para parar
     speechRecognition.maxAlternatives = 0; // Número máximo de alternativas de reconhecimento de fala
-    speechRecognition.interimResults = true; // Permite resultados no momento da fala e não apenas quando termina
+    speechRecognition.interimResults = false; // Permite resultados no momento da fala e não apenas quando termina
 
     speechRecognition.onresult = (e) => {
       // Converte o results para um array com métodos do array
