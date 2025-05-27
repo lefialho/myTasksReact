@@ -27,19 +27,15 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
   function handleContentChanged(e: ChangeEvent<HTMLTextAreaElement>) {
     setContent(e.target.value);
-
-    if (e.target.value === '') {
-      setShouldShowOnboarding(true);
-    }
   }
 
   function handleSaveNote(e: FormEvent) {
     e.preventDefault();
 
-    if (content === '') return;
+    if (title === '') return;
 
     onNoteCreated(title, content);
-    setContent('');
+    setTitle('');
     setShouldShowOnboarding(true);
 
     toast.success('Nota salva com sucesso!');
@@ -112,6 +108,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50" />
         <Dialog.Content
+          aria-describedby={undefined}
           onEscapeKeyDown={setDefault}
           className="overflow-hidden fixed inset-0 md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] md:h-[60vh] w-full bg-white dark:bg-slate-700 md:rounded-md flex flex-col outline-none z-20"
         >
@@ -161,16 +158,14 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                     <input
                       className="text-lg leading-6 w-full text-slate-600 dark:text-slate-300 dark:placeholder-slate-500 bg-transparent resize-none flex-1 outline-none "
                       type="text"
-                      placeholder="Título da nota"
+                      placeholder="Escreva aqui o título da nota"
                       onChange={handleTitleChanged}
-                      autoFocus
                     />
                   </h2>
 
                   <textarea
                     onChange={handleContentChanged}
-                    autoFocus
-                    placeholder="Nota..."
+                    placeholder="Escreva aqui o texto da nota..."
                     className="leading-6 text-slate-400 dark:text-slate-400 bg-transparent resize-none flex-1 outline-none"
                     value={content}
                   ></textarea>

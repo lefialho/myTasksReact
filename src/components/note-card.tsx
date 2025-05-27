@@ -37,7 +37,7 @@ export function NoteCard({
   function handleSaveNote(e: FormEvent) {
     e.preventDefault();
 
-    if (content === '') return;
+    if (title === '') return;
 
     onNoteUpdated(note.id, title, content);
     setOpen(false);
@@ -68,7 +68,10 @@ export function NoteCard({
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-        <Dialog.Content className="overflow-hidden fixed inset-0 z-20 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] md:h-[60vh] w-full bg-white dark:bg-slate-700 md:rounded-md flex flex-col outline-none">
+        <Dialog.Content
+          aria-describedby={undefined}
+          className="overflow-hidden fixed inset-0 z-20 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] md:h-[60vh] w-full bg-white dark:bg-slate-700 md:rounded-md flex flex-col outline-none"
+        >
           <Dialog.Close className="absolute right-0 top-0 p-1.5 bg-slate-200 hover dark:bg-slate-800 text-slate-400 hover:text-slate-500 dark:hover:text-slate-100 outline-none focus-visible:ring-2 focus-visible:ring-lime-400 rounded-bl-sm">
             <X className="size-5" />
           </Dialog.Close>
@@ -95,7 +98,7 @@ export function NoteCard({
               <textarea
                 className="w-full h-full overflow-hidden leading-6 text-slate-500 dark:text-slate-400 bg-transparent resize-none flex-1 outline-none"
                 onChange={handleContentChanged}
-                autoFocus
+                placeholder="Escreva aqui o texto da nota..."
                 value={content}
               />
             </Dialog.Description>
@@ -104,7 +107,7 @@ export function NoteCard({
           <div className="flex">
             <button
               onClick={handleSaveNote}
-              disabled={!content}
+              disabled={!title}
               type="button"
               className="w-full py-4 text-sm outline-none font-medium focus-visible:bg-lime-600 focus-visible:text-lime-200 text-lime-950  bg-lime-400 hover:bg-lime-500 disabled:bg-slate-600 disabled:text-slate-500 disabled:cursor-not-allowed"
             >
