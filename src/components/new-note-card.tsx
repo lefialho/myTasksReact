@@ -14,6 +14,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [isRercording, setIsRecording] = useState(false);
+  const [open, setOpen] = useState(false);
 
   function handleStartEditor() {
     setShouldShowOnboarding(false);
@@ -36,9 +37,10 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
     onNoteCreated(title, content);
     setTitle('');
-    setShouldShowOnboarding(true);
+    setContent('');
+    setOpen(false);
 
-    toast.success('Nota salva com sucesso!');
+    toast.success('Nota salva com sucesso!', { position: 'bottom-left' });
   }
 
   function handleStartRecording() {
@@ -100,7 +102,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
   }
 
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger className="fixed z-10 bottom-4 right-4 md:bottom-8 md:right-8 p-0.5 outline-none focus-visible:bg-lime-400 bg-lime-400 hover:bg-lime-500 text-slate-500 rounded-full">
         <PlusCircle className="size-10 stroke-1" />
       </Dialog.Trigger>

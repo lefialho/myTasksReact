@@ -41,7 +41,7 @@ export function NoteCard({
 
     onNoteUpdated(note.id, title, content);
     setOpen(false);
-    toast.success('Nota salva com sucesso!');
+    toast.success('Nota salva com sucesso!', { position: 'bottom-left' });
   }
 
   return (
