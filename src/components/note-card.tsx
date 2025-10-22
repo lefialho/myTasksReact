@@ -47,16 +47,16 @@ export function NoteCard({
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger className="relative text-left p-5 flex flex-col gap-3 rounded-md shadow dark:shadow-none shadow-slate-300 bg-white dark:bg-slate-800 overflow-hidden hover:ring-2 text-slate-600 dark:text-slate-400 hover:ring-slate-600 outline-none focus-visible:ring-2 focus-visible:ring-lime-400">
-        <h2 className="font-bold text-lg dark:text-slate-300 line-clamp-2">
-          {title}
-        </h2>
-
         <span className="inline-block text-sm font-medium text-slate-400 dark:text-slate-500">
           {formatDistanceToNow(note.date, {
             locale: ptBR,
             addSuffix: true,
           })}
         </span>
+
+        <h2 className="font-bold text-lg dark:text-slate-300 line-clamp-2">
+          {title}
+        </h2>
 
         <p
           className="text-slate-500 dark:text-slate-400 line-clamp-3"
@@ -87,13 +87,6 @@ export function NoteCard({
           </Dialog.Title>
 
           <div className="flex flex-1 flex-col gap-3 p-5">
-            <span className="inline-block text-sm font-medium text-slate-400 dark:text-slate-500">
-              {formatDistanceToNow(note.date, {
-                locale: ptBR,
-                addSuffix: true,
-              })}
-            </span>
-
             <Dialog.Description className="leading-6 h-full">
               <textarea
                 className="w-full h-full overflow-hidden leading-6 text-slate-500 dark:text-slate-400 bg-transparent resize-none flex-1 outline-none"

@@ -72,7 +72,9 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
         return text.concat(result[0].transcript); // posição 0 porque só tem uma alternativa - maxAlternatives = 1
       }, '');
 
-      setContent(transcription); // Atualiza o conteúdo com a transcriçãoß
+      console.log(transcription);
+
+      setTitle(transcription); // Atualiza o conteúdo com a transcrição
     };
 
     speechRecognition.onerror = (e) => {
@@ -161,6 +163,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                       className="text-lg leading-6 w-full text-slate-600 dark:text-slate-300 dark:placeholder-slate-500 bg-transparent resize-none flex-1 outline-none "
                       type="text"
                       placeholder="Escreva aqui o título da nota"
+                      value={title}
                       onChange={handleTitleChanged}
                     />
                   </h2>
