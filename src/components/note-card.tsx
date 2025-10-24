@@ -54,7 +54,7 @@ export function NoteCard({
           })}
         </span>
 
-        <h2 className="font-bold text-lg dark:text-slate-300 line-clamp-2">
+        <h2 className="first-letter:uppercase font-bold text-lg dark:text-slate-300 line-clamp-2">
           {title}
         </h2>
 
@@ -78,7 +78,7 @@ export function NoteCard({
 
           <Dialog.Title className="text-lg font-semibold p-5 pb-0">
             <input
-              className="text-lg leading-6 w-full text-slate-600 dark:text-slate-300 bg-transparent resize-none flex-1 outline-none"
+              className="first-letter:uppercase text-lg leading-6 w-full text-slate-600 dark:text-slate-300 bg-transparent resize-none flex-1 outline-none"
               type="text"
               placeholder="Título da nota"
               onChange={handleTitleChanged}

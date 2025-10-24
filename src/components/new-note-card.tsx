@@ -39,6 +39,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     setTitle('');
     setContent('');
     setOpen(false);
+    setShouldShowOnboarding(true);
 
     toast.success('Nota salva com sucesso!', { position: 'bottom-left' });
   }
@@ -71,8 +72,6 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
       const transcription = Array.from(e.results).reduce((text, result) => {
         return text.concat(result[0].transcript); // posição 0 porque só tem uma alternativa - maxAlternatives = 1
       }, '');
-
-      console.log(transcription);
 
       setTitle(transcription); // Atualiza o conteúdo com a transcrição
     };
@@ -160,7 +159,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                 <div className="flex flex-col gap-4 h-full">
                   <h2>
                     <input
-                      className="text-lg leading-6 w-full text-slate-600 dark:text-slate-300 dark:placeholder-slate-500 bg-transparent resize-none flex-1 outline-none "
+                      className="first-letter:uppercase text-lg leading-6 w-full text-slate-600 dark:text-slate-300 dark:placeholder-slate-500 bg-transparent resize-none flex-1 outline-none "
                       type="text"
                       placeholder="Escreva aqui o título da nota"
                       value={title}
