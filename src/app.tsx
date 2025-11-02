@@ -97,8 +97,7 @@ export function App() {
         </form>
       ) : (
         <p className="rounded-md shadow dark:shadow-none shadow-slate-300 bg-white dark:bg-slate-800 overflow-hidden hover:ring-2 text-slate-600 dark:text-slate-400 p-5">
-          Pressione no botão com o símbolo de + logo abaixo, para inserir uma
-          nota.
+          Pressione no botão + logo abaixo, para inserir uma nota.
         </p>
       )}
 
